@@ -38,5 +38,7 @@ namespace TrackerLibrary.DataAccess
             }
                 
         }
+
+        public PersonModel CreatePerson(PersonModel person) { return new PersonModel(); }
     }
 }
