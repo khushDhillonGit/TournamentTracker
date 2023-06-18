@@ -12,9 +12,9 @@ using TrackerLibrary.Models;
 
 namespace TrackerUI
 {
-    public partial class addMemberButton : Form
+    public partial class CreateTeamForm : Form
     {
-        public addMemberButton()
+        public CreateTeamForm()
         {
             InitializeComponent();
         }
@@ -26,9 +26,9 @@ namespace TrackerUI
 
         private void createMemberButton_Click(object sender, EventArgs e)
         {
-            if(ValidateForm())
+            if (ValidateForm())
             {
-                PersonModel p  = new PersonModel();
+                PersonModel p = new PersonModel();
 
                 p.FirstName = firstNameValue.Text;
                 p.LastName = lastNameValue.Text;
@@ -36,6 +36,12 @@ namespace TrackerUI
                 p.EmailAddress = emailValue.Text;
 
                 GlobalConfig.Connection.CreatePerson(p);
+
+                firstNameValue.Text = "";
+                lastNameValue.Text = "";
+                emailValue.Text = "";
+                cellPhoneValue.Text = "";
+
             }
             else
             {
@@ -43,14 +49,14 @@ namespace TrackerUI
             }
         }
 
-        private bool ValidateForm() 
+        private bool ValidateForm()
         {
             //TODO - Add Validations to the form
             if (firstNameValue.Text.Length == 0)
             {
                 return false;
             }
-            
+
             if (emailValue.Text.Length == 0)
             {
                 return false;

@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 using TrackerLibrary.Models;
 using System.Data.SqlClient;
 using Dapper;
+using System.Reflection;
+
 namespace TrackerLibrary.DataAccess
 {
     public class SqlConnecter : IDataConection
@@ -39,6 +41,23 @@ namespace TrackerLibrary.DataAccess
                 
         }
 
-        public PersonModel CreatePerson(PersonModel person) { return new PersonModel(); }
+        public PersonModel CreatePerson(PersonModel model) 
+        {
+            using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString("Tournaments")))
+            {
+                var p = new DynamicParameters();
+                p.Add("@FirstName", model.FirstName);
+                p.Add("@LastName", model.LastName);
+                p.Add("@EmailAddress", model.EmailAddress);
+                p.Add("@CellphoneNumber", model.CellPhoneNumber);
+                p.Add("@id", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
+
+                connection.Execute("dbo.spPeople_Insert", p, commandType: CommandType.StoredProcedure);
+
+                model.Id = p.Get<int>("@id");
+
+                return model;
+            }
+        }
     }
 }

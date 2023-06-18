@@ -1,6 +1,6 @@
 ﻿namespace TrackerUI
 {
-    partial class addMemberButton
+    partial class CreateTeamForm
     {
         /// <summary>
         /// Required designer variable.
@@ -261,7 +261,7 @@
             createTeamButton.Text = "Create Team";
             createTeamButton.UseVisualStyleBackColor = true;
             // 
-            // addMemberButton
+            // CreateTeamForm
             // 
             AutoScaleDimensions = new SizeF(15F, 37F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -279,7 +279,7 @@
             Controls.Add(createTeamLabel);
             Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
             Margin = new Padding(6);
-            Name = "addMemberButton";
+            Name = "CreateTeamForm";
             Text = "Add Member";
             addNewMemberGroupBox.ResumeLayout(false);
             addNewMemberGroupBox.PerformLayout();
