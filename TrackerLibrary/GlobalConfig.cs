@@ -8,6 +8,11 @@ using System.Configuration;
 
 namespace TrackerLibrary
 {
+
+    public interface IFields
+    {
+        public int Id { get; set; }
+    }
     public static class GlobalConfig
     {
         public static IDataConection Connection { get; private set; }
@@ -27,6 +32,7 @@ namespace TrackerLibrary
                 Connection = textConnecter;
             }
         }
+
         public static string CnnString(string name) { 
             return ConfigurationManager.ConnectionStrings[name].ConnectionString;
         }
