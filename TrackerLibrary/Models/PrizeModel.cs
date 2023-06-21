@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TrackerLibrary.Models
 {
-    public class PrizeModel
+    public class PrizeModel : IFields
     {
         public int Id { get; set; }
         public int PlaceNumber { get; set; }
