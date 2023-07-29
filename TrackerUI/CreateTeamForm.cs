@@ -107,7 +107,7 @@ namespace TrackerUI
             {
                 availableTeamMembers.Remove(p);
                 selectedTeamMembers.Add(p);
-                WireUpLists(); 
+                WireUpLists();
             }
         }
 
@@ -119,8 +119,13 @@ namespace TrackerUI
             {
                 selectedTeamMembers.Remove(p);
                 availableTeamMembers.Add(p);
-                WireUpLists(); 
+                WireUpLists();
             }
+        }
+
+        private void createTeamButton_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
