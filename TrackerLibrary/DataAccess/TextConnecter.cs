@@ -47,5 +47,10 @@ namespace TrackerLibrary.DataAccess
         {
             return CreateObject(PeopleFile, model);
         }
+
+        public List<PersonModel> GetPerson_All()
+        {
+            return PeopleFile.FullFilePath().LoadFile().ConvertToModel<PersonModel>();
+        }
     }
 }

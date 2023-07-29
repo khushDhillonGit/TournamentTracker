@@ -93,6 +93,7 @@
             addTeamButton.TabIndex = 25;
             addTeamButton.Text = "Add Team";
             addTeamButton.UseVisualStyleBackColor = true;
+            addTeamButton.Click += addTeamButton_Click;
             // 
             // selectTeamMemberDropDown
             // 
@@ -245,6 +246,7 @@
             deleteSelectedMemberButton.TabIndex = 28;
             deleteSelectedMemberButton.Text = "Delete Selected";
             deleteSelectedMemberButton.UseVisualStyleBackColor = true;
+            deleteSelectedMemberButton.Click += deleteSelectedMemberButton_Click;
             // 
             // createTeamButton
             // 

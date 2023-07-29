@@ -45,11 +45,12 @@ namespace TrackerLibrary.DataAccess.TextHelpers
 
                 T newObject = new();
 
-                var properties = newObject.GetType().GetProperties();
+                var properties = newObject.GetType().GetProperties().ToList();
+
+                properties.RemoveAll(a => !a.CanWrite);
 
                 for (int i = 0; i < header.Length; i++)
                 {
-
                     foreach (var property in properties)
                     {
                         if (property.Name == header[i])
