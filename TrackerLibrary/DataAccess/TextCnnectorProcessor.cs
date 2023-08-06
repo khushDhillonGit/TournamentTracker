@@ -1,8 +1,12 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Configuration;
 using System.Diagnostics;
 using System.Linq;
+using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,12 +31,45 @@ namespace TrackerLibrary.DataAccess.TextHelpers
 
             return File.ReadAllLines(file).ToList();
         }
+        public static List<TeamModel> ConvertToTeamModels(this List<string> lines,string peopleFileName)
+        {
+            List<TeamModel> output = new();
 
+            List<PersonModel> persons = peopleFileName.FullFilePath().LoadFile().ConvertToModel<PersonModel>();
+
+            //remove header
+            lines.RemoveAt(0);
+
+            foreach (string line in lines)
+            {
+                string[] cols = line.Split(',');
+
+                TeamModel team = new TeamModel();
+
+                team.Id = int.Parse(cols[0]);
+                team.TeamName = cols[1];
+
+                string[] personIds = cols[2].Split('|');
+
+                foreach (string personId in personIds)
+                {
+                    team.TeamMembers.Add(persons.FirstOrDefault(a => a.Id == int.Parse(personId)) ?? new PersonModel());
+                    team.TeamMembersIds += $"{personId}|";
+                }
+                if (personIds.Any()) 
+                {
+                    team.TeamMembersIds = team.TeamMembersIds.Substring(0, team.TeamMembersIds.Length - 1);
+                }
+                output.Add(team);
+            }
+            return output;
+        }
         public static List<T> ConvertToModel<T>(this List<string> lines) where T : class, new()
         {
             List<T> output = new();
 
-            if (!lines.Any()) { 
+            if (!lines.Any())
+            {
                 return output;
             }
             var header = lines[0].Split(",");
@@ -55,6 +92,23 @@ namespace TrackerLibrary.DataAccess.TextHelpers
                     {
                         if (property.Name == header[i])
                         {
+                            if (property.Name.EndsWith("Properties"))
+                            {
+                                var listProp = properties.FirstOrDefault(a => a.Name.Equals(property.Name.Replace("Properties", "")) && a.GetType().Equals(typeof(IList)));
+
+
+                                var className = listProp?.GetType().GetGenericArguments()[0];
+
+                                var fileName = className?.Name + ".csv";
+
+                                MethodInfo? createMethod = typeof(TextCnnectorProcessor).GetMethod("ConvertToModel")?.MakeGenericMethod(className);
+
+                                Type ListC = typeof(List<>).MakeGenericType(className);
+
+                                var result = createMethod?.Invoke(null, new object[] { fileName.FullFilePath().LoadFile() }) as IList;
+
+                                Convert.ChangeType(result, ListC);
+                            }
                             property.SetValue(newObject, Convert.ChangeType(cols[i], property.PropertyType));
                         }
                     }
@@ -64,16 +118,20 @@ namespace TrackerLibrary.DataAccess.TextHelpers
             return output;
         }
 
+
+
         public static void SaveToFile<T>(this List<T> models, string fileName) where T : class, new()
         {
             List<string> lines = new();
 
-            if (!models.Any() || string.IsNullOrEmpty(fileName)) 
+            if (!models.Any() || string.IsNullOrEmpty(fileName))
             {
-                return;    
+                return;
             }
 
-            var prop = models[0].GetType().GetProperties();
+            List<PropertyInfo> prop = models[0].GetType().GetProperties().ToList();
+
+            prop.RemoveAll(a => !(a.PropertyType.IsPrimitive || a.PropertyType.Equals(typeof(string))));
 
             StringBuilder header = new();
             foreach (var item in prop)
@@ -81,8 +139,8 @@ namespace TrackerLibrary.DataAccess.TextHelpers
                 header.Append(item.Name);
                 header.Append(',');
             }
-            lines.Add(header.ToString().Substring(0, header.Length - 1));
 
+            lines.Add(header.ToString().Substring(0, header.Length - 1));
 
             foreach (var item in models)
             {
@@ -91,7 +149,9 @@ namespace TrackerLibrary.DataAccess.TextHelpers
                 {
                     line.Append(p.GetValue(item)?.ToString());
                     line.Append(',');
+
                 }
+
                 lines.Add(line.ToString().Substring(0, line.Length - 1));
             }
 
