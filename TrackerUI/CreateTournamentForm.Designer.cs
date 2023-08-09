@@ -123,6 +123,7 @@
             createTeamLink.TabIndex = 16;
             createTeamLink.TabStop = true;
             createTeamLink.Text = "Create Team";
+            createTeamLink.LinkClicked += createTeamLink_LinkClicked;
             // 
             // addTeamButton
             // 
@@ -138,6 +139,7 @@
             addTeamButton.TabIndex = 19;
             addTeamButton.Text = "Add Team";
             addTeamButton.UseVisualStyleBackColor = true;
+            addTeamButton.Click += addTeamButton_Click;
             // 
             // createPrizeButton
             // 
@@ -153,6 +155,7 @@
             createPrizeButton.TabIndex = 20;
             createPrizeButton.Text = "Create Prize";
             createPrizeButton.UseVisualStyleBackColor = true;
+            createPrizeButton.Click += createPrizeButton_Click;
             // 
             // tournamentPlayersListBox
             // 
@@ -189,6 +192,7 @@
             deleteSelectedPlayersButton.TabIndex = 23;
             deleteSelectedPlayersButton.Text = "Delete Selected";
             deleteSelectedPlayersButton.UseVisualStyleBackColor = true;
+            deleteSelectedPlayersButton.Click += deleteSelectedPlayersButton_Click;
             // 
             // deleteSelectedPrizeButton
             // 
@@ -210,11 +214,11 @@
             prizesLabel.AutoSize = true;
             prizesLabel.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point);
             prizesLabel.ForeColor = SystemColors.MenuHighlight;
-            prizesLabel.Location = new Point(627, 404);
+            prizesLabel.Location = new Point(630, 404);
             prizesLabel.Name = "prizesLabel";
-            prizesLabel.Size = new Size(248, 46);
+            prizesLabel.Size = new Size(106, 46);
             prizesLabel.TabIndex = 25;
-            prizesLabel.Text = "Teams / Players";
+            prizesLabel.Text = "Prizes";
             // 
             // prizesListBox
             // 
@@ -265,7 +269,7 @@
             Controls.Add(tournamentNameLabel);
             Controls.Add(headerLabel);
             Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point);
-            Margin = new Padding(6, 6, 6, 6);
+            Margin = new Padding(6);
             Name = "CreateTournamentForm";
             Text = "Create Tournament";
             ResumeLayout(false);

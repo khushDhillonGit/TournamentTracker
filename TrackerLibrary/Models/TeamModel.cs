@@ -21,7 +21,7 @@ namespace TrackerLibrary.Models
                 teamMembers = value;
                 TeamMembersIds = string.Join('|', teamMembers.Select(x => x.Id.ToString()));
             }
-        }
+        } 
         public string TeamMembersIds { get; set; } = "";
     }
 }
