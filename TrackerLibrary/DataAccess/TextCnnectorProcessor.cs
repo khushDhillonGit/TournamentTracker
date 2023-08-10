@@ -64,6 +64,38 @@ namespace TrackerLibrary.DataAccess.TextHelpers
             }
             return output;
         }
+
+        public static List<TournamentModel> ConvertToTournamentModels(this List<string> lines) 
+        {
+            List<TournamentModel> output = new();
+            foreach (string line in lines)
+            {
+                TournamentModel tournament = new TournamentModel();
+                string[] cols = line.Split(",");
+                tournament.Id = int.Parse(cols[0]);
+                tournament.TournamentName = cols[1];
+                tournament.EntryFee = decimal.Parse(cols[2]);
+
+                string[] teamIds = cols[3].Split('|');
+
+                List<TeamModel> teams = TextConnecter.TeamFile.FullFilePath().LoadFile().ConvertToTeamModels(TextConnecter.PeopleFile);
+                List<PrizeModel> prizes = TextConnecter.PrizesFile.FullFilePath().LoadFile().ConvertToModel<PrizeModel>();
+                foreach (var id in teamIds) 
+                {
+                    tournament.EnteredTeams.Add(teams.FirstOrDefault(a => a.Id == int.Parse(id)));
+                }
+
+                string[] prizeIds = cols[4].Split('|');
+                foreach (var id in prizeIds) 
+                {
+                    tournament.Prizes.Add(prizes.FirstOrDefault(a => a.Id == int.Parse(id)));
+                }
+
+                output.Add(tournament);
+            }
+            return output;
+        }
+
         public static List<T> ConvertToModel<T>(this List<string> lines) where T : class, new()
         {
             List<T> output = new();

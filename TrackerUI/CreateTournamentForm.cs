@@ -86,5 +86,31 @@ namespace TrackerUI
                 InitializeLists();
             }
         }
+
+        private void createTournamentButton_Click(object sender, EventArgs e)
+        {
+
+            bool feeAcceptable = decimal.TryParse(entryFeeValue.Text, out decimal fee);
+
+            if (!feeAcceptable) 
+            {
+                MessageBox.Show("You need to enter a valid entry fee.", 
+                    "Invalid Fess",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return;
+            }
+
+            TournamentModel tournament = new();
+            tournament.TournamentName = tournamentNameValue.Text;
+            tournament.EntryFee = fee;
+            tournament.Prizes = selectedPrizes;
+            tournament.EnteredTeams = selectedTeams;
+
+            //Create matchups
+
+            GlobalConfig.Connection.CreateTournament(tournament);  
+
+        }
     }
 }

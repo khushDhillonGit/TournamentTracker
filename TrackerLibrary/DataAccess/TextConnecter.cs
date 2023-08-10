@@ -12,9 +12,11 @@ namespace TrackerLibrary.DataAccess
 {
     public class TextConnecter : IDataConection
     {
-        private const string PrizesFile = nameof(PrizeModel) + ".csv";
-        private const string PeopleFile = nameof(PersonModel) + ".csv";
-        private const string TeamFile = nameof(TeamModel) + ".csv";
+        public const string PrizesFile = nameof(PrizeModel) + ".csv";
+        public const string PeopleFile = nameof(PersonModel) + ".csv";
+        public const string TeamFile = nameof(TeamModel) + ".csv";
+        public const string TournamentFile = nameof(TournamentModel) + ".csv";
+        public const string MatchupFile = nameof(MatchupModel) + ".csv";
 
         public T CreateObject<T>(string fileName, T model) where T : class , IFields, new()
         {
@@ -89,6 +91,11 @@ namespace TrackerLibrary.DataAccess
         public List<TeamModel> GetTeam_All()
         {
             return TeamFile.FullFilePath().LoadFile().ConvertToTeamModels(PeopleFile);
+        }
+
+        public TournamentModel CreateTournament(TournamentModel model)
+        {
+            return TournamentFile.FullFilePath().LoadFile().ConvertToTournamentModels();
         }
     }
 }

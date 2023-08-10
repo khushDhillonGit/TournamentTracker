@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace TrackerLibrary.Models
 {
-    public class MatchupEntryModel
+    public class MatchupEntryModel : IFields
     {
+        public int Id { get; set; }
         /// <summary>
         /// Represents One Team in the Matchup
         /// </summary>
