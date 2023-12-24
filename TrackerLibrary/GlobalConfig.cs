@@ -19,7 +19,7 @@ namespace TrackerLibrary
 
         public static void InitializeConnections(DatabaseType db) 
         {
-            if (db == DatabaseType.Sql) 
+            if (db == DatabaseType.Sql)
             { 
                 // TODO SetUpSQl Connecter properly
                 SqlConnecter sql = new SqlConnecter();
@@ -37,8 +37,6 @@ namespace TrackerLibrary
             return ConfigurationManager.ConnectionStrings[name].ConnectionString;
         }
     }
-
-    
 
 
 }

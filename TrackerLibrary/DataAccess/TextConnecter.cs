@@ -17,6 +17,7 @@ namespace TrackerLibrary.DataAccess
         public const string TeamFile = nameof(TeamModel) + ".csv";
         public const string TournamentFile = nameof(TournamentModel) + ".csv";
         public const string MatchupFile = nameof(MatchupModel) + ".csv";
+        public const string MatchupEntryFile = nameof(MatchupEntryModel) + ".csv";
 
         public T CreateObject<T>(string fileName, T model) where T : class , IFields, new()
         {
@@ -58,7 +59,7 @@ namespace TrackerLibrary.DataAccess
         public TeamModel CreateTeam(TeamModel model)
         {
 
-            List<TeamModel> teams = TeamFile.FullFilePath().LoadFile().ConvertToTeamModels(PeopleFile);
+            List<TeamModel> teams = TeamFile.FullFilePath().LoadFile().ConvertToTeamModels();
 
             int id = 0;
 
@@ -90,12 +91,29 @@ namespace TrackerLibrary.DataAccess
 
         public List<TeamModel> GetTeam_All()
         {
-            return TeamFile.FullFilePath().LoadFile().ConvertToTeamModels(PeopleFile);
+            return TeamFile.FullFilePath().LoadFile().ConvertToTeamModels();
         }
 
-        public TournamentModel CreateTournament(TournamentModel model)
+        public void CreateTournament(TournamentModel model)
         {
-            return TournamentFile.FullFilePath().LoadFile().ConvertToTournamentModels();
+            List<TournamentModel> tournaments = TournamentFile.FullFilePath().LoadFile().ConvertToTournamentModels();
+
+            int id = 0;
+
+            if (tournaments.Any())
+            {
+                id = tournaments.OrderByDescending(x => x.Id).First().Id + 1;
+            }
+
+            model.Id = id;
+
+            model.SaveRoundsToFile(MatchupFile, MatchupEntryFile);
+
+            tournaments.Add(model);
+
+            tournaments.SaveToTournamentFile();
+            
         }
+
     }
 }

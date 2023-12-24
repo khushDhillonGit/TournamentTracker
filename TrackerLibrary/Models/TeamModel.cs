@@ -10,7 +10,7 @@ namespace TrackerLibrary.Models
     public class TeamModel : IFields
     {
         public int Id { get; set; }
-        public string TeamName { get; set; }
+        public string? TeamName { get; set; }
 
         private List<PersonModel> teamMembers = new List<PersonModel>();
         public List<PersonModel> TeamMembers

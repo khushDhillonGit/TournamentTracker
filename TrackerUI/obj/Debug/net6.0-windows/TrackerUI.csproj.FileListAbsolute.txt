@@ -40,3 +40,45 @@ C:\Users\khush\source\repos\TournamentTracker\TrackerUI\obj\Debug\net6.0-windows
 C:\Users\khush\source\repos\TournamentTracker\TrackerUI\obj\Debug\net6.0-windows\TrackerUI.pdb
 C:\Users\khush\source\repos\TournamentTracker\TrackerUI\obj\Debug\net6.0-windows\TrackerUI.genruntimeconfig.cache
 C:\Users\khush\source\repos\TournamentTracker\TrackerUI\obj\Debug\net6.0-windows\ref\TrackerUI.dll
+C:\Users\Khuswinder Singh\source\repos\Laptop repos\TournamentTracker\TrackerUI\bin\Debug\net6.0-windows\TrackerUI.exe
+C:\Users\Khuswinder Singh\source\repos\Laptop repos\TournamentTracker\TrackerUI\bin\Debug\net6.0-windows\TrackerUI.dll.config
+C:\Users\Khuswinder Singh\source\repos\Laptop repos\TournamentTracker\TrackerUI\bin\Debug\net6.0-windows\TrackerUI.deps.json
+C:\Users\Khuswinder Singh\source\repos\Laptop repos\TournamentTracker\TrackerUI\bin\Debug\net6.0-windows\TrackerUI.runtimeconfig.json
+C:\Users\Khuswinder Singh\source\repos\Laptop repos\TournamentTracker\TrackerUI\bin\Debug\net6.0-windows\TrackerUI.dll
+C:\Users\Khuswinder Singh\source\repos\Laptop repos\TournamentTracker\TrackerUI\bin\Debug\net6.0-windows\TrackerUI.pdb
+C:\Users\Khuswinder Singh\source\repos\Laptop repos\TournamentTracker\TrackerUI\bin\Debug\net6.0-windows\Dapper.dll
+C:\Users\Khuswinder Singh\source\repos\Laptop repos\TournamentTracker\TrackerUI\bin\Debug\net6.0-windows\Microsoft.Win32.SystemEvents.dll
+C:\Users\Khuswinder Singh\source\repos\Laptop repos\TournamentTracker\TrackerUI\bin\Debug\net6.0-windows\System.Configuration.ConfigurationManager.dll
+C:\Users\Khuswinder Singh\source\repos\Laptop repos\TournamentTracker\TrackerUI\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+C:\Users\Khuswinder Singh\source\repos\Laptop repos\TournamentTracker\TrackerUI\bin\Debug\net6.0-windows\System.Drawing.Common.dll
+C:\Users\Khuswinder Singh\source\repos\Laptop repos\TournamentTracker\TrackerUI\bin\Debug\net6.0-windows\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Khuswinder Singh\source\repos\Laptop repos\TournamentTracker\TrackerUI\bin\Debug\net6.0-windows\System.Security.Permissions.dll
+C:\Users\Khuswinder Singh\source\repos\Laptop repos\TournamentTracker\TrackerUI\bin\Debug\net6.0-windows\System.Windows.Extensions.dll
+C:\Users\Khuswinder Singh\source\repos\Laptop repos\TournamentTracker\TrackerUI\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Khuswinder Singh\source\repos\Laptop repos\TournamentTracker\TrackerUI\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+C:\Users\Khuswinder Singh\source\repos\Laptop repos\TournamentTracker\TrackerUI\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+C:\Users\Khuswinder Singh\source\repos\Laptop repos\TournamentTracker\TrackerUI\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+C:\Users\Khuswinder Singh\source\repos\Laptop repos\TournamentTracker\TrackerUI\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Khuswinder Singh\source\repos\Laptop repos\TournamentTracker\TrackerUI\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Khuswinder Singh\source\repos\Laptop repos\TournamentTracker\TrackerUI\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\Users\Khuswinder Singh\source\repos\Laptop repos\TournamentTracker\TrackerUI\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Khuswinder Singh\source\repos\Laptop repos\TournamentTracker\TrackerUI\bin\Debug\net6.0-windows\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\Khuswinder Singh\source\repos\Laptop repos\TournamentTracker\TrackerUI\bin\Debug\net6.0-windows\TrackerLibrary.dll
+C:\Users\Khuswinder Singh\source\repos\Laptop repos\TournamentTracker\TrackerUI\bin\Debug\net6.0-windows\TrackerLibrary.pdb
+C:\Users\Khuswinder Singh\source\repos\Laptop repos\TournamentTracker\TrackerUI\obj\Debug\net6.0-windows\TrackerUI.csproj.AssemblyReference.cache
+C:\Users\Khuswinder Singh\source\repos\Laptop repos\TournamentTracker\TrackerUI\obj\Debug\net6.0-windows\TrackerUI.CreatePrizeForm.resources
+C:\Users\Khuswinder Singh\source\repos\Laptop repos\TournamentTracker\TrackerUI\obj\Debug\net6.0-windows\TrackerUI.CreateTeamForm.resources
+C:\Users\Khuswinder Singh\source\repos\Laptop repos\TournamentTracker\TrackerUI\obj\Debug\net6.0-windows\TrackerUI.CreateTournamentForm.resources
+C:\Users\Khuswinder Singh\source\repos\Laptop repos\TournamentTracker\TrackerUI\obj\Debug\net6.0-windows\TrackerUI.TournamentDashboardForm.resources
+C:\Users\Khuswinder Singh\source\repos\Laptop repos\TournamentTracker\TrackerUI\obj\Debug\net6.0-windows\TrackerUI.TournamentViewer.resources
+C:\Users\Khuswinder Singh\source\repos\Laptop repos\TournamentTracker\TrackerUI\obj\Debug\net6.0-windows\TrackerUI.csproj.GenerateResource.cache
+C:\Users\Khuswinder Singh\source\repos\Laptop repos\TournamentTracker\TrackerUI\obj\Debug\net6.0-windows\TrackerUI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Khuswinder Singh\source\repos\Laptop repos\TournamentTracker\TrackerUI\obj\Debug\net6.0-windows\TrackerUI.AssemblyInfoInputs.cache
+C:\Users\Khuswinder Singh\source\repos\Laptop repos\TournamentTracker\TrackerUI\obj\Debug\net6.0-windows\TrackerUI.AssemblyInfo.cs
+C:\Users\Khuswinder Singh\source\repos\Laptop repos\TournamentTracker\TrackerUI\obj\Debug\net6.0-windows\TrackerUI.csproj.CoreCompileInputs.cache
+C:\Users\Khuswinder Singh\source\repos\Laptop repos\TournamentTracker\TrackerUI\obj\Debug\net6.0-windows\TrackerUI.csproj.CopyComplete
+C:\Users\Khuswinder Singh\source\repos\Laptop repos\TournamentTracker\TrackerUI\obj\Debug\net6.0-windows\TrackerUI.dll
+C:\Users\Khuswinder Singh\source\repos\Laptop repos\TournamentTracker\TrackerUI\obj\Debug\net6.0-windows\refint\TrackerUI.dll
+C:\Users\Khuswinder Singh\source\repos\Laptop repos\TournamentTracker\TrackerUI\obj\Debug\net6.0-windows\TrackerUI.pdb
+C:\Users\Khuswinder Singh\source\repos\Laptop repos\TournamentTracker\TrackerUI\obj\Debug\net6.0-windows\TrackerUI.genruntimeconfig.cache
+C:\Users\Khuswinder Singh\source\repos\Laptop repos\TournamentTracker\TrackerUI\obj\Debug\net6.0-windows\ref\TrackerUI.dll
